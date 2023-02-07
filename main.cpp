@@ -130,7 +130,7 @@ bool isDressSizeAvailable(int typeOfDress, char dressSize = 'S' )
 /*
  4)
  */
-int numOfMangaAvailable(char initialLetterOfTitle ,int typeOfManga = 2)
+int numOfMangaAvailable(char initialLetterOfTitle, int typeOfManga = 2)
 {
     ignoreUnused(initialLetterOfTitle, typeOfManga);
     return {};
@@ -166,7 +166,7 @@ void resumeSong(int momentTimeStamp, int sampleRate = 44100)
 /*
  9)
  */
-float OfferToAuction(float actualOffer, float yourOffer = 50.0f)
+float offerToAuction(float actualOffer, float yourOffer = 50.0f)
 {
     ignoreUnused(actualOffer, yourOffer);
     return {};
@@ -214,7 +214,7 @@ int main()
     //8)
     resumeSong(851, 44100);
     //9)
-    auto actualAuctionOffer = OfferToAuction(250.43f, 300.0f);
+    auto actualAuctionOffer = offerToAuction(250.43f, 300.0f);
     //10)
     accelerateCar(32.5, true);
     
