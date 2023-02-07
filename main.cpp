@@ -15,7 +15,13 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
+
+int
+float
+double
+char
+bool
+void
  
  
  
@@ -64,10 +70,26 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int number2 = 3;
+    int number3 = 100;
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    float floatNum1 = 1.2f;
+    float floatNum2 = 3.54f;
+    float floatNum3 = 24.3f;
+
+    double doubleNum1 = 1.2;
+    double doubleNum2 = 3.54;
+    double doubleNum3 = 24.3;
+
+    char charVal1 = 'a';
+    char charVal2 = 'f';
+    char charVal3 = 'B';
+
+    bool boolVal1 = true;
+    bool boolVal2 = false;
+    bool boolVal3 = false;
+
+    ignoreUnused(number, number2, number3, floatNum1, floatNum2, floatNum3, doubleNum1, doubleNum2, doubleNum3, charVal1, charVal2, charVal3, boolVal1, boolVal2, boolVal3); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,43 +106,78 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int makeMathOperation(int firstOperand, int secondOperand, int operationType = 0)
+{
+    ignoreUnused(firstOperand, secondOperand, operationType);
+    return {};
+}
 /*
  2)
  */
-
+bool bookARoom(int numberOfDays, int numberOfBeds = 1)
+{
+    ignoreUnused(numberOfDays, numberOfBeds);
+    return {};
+}
 /*
  3)
  */
-
+bool isDressSizeAvailable(int typeOfDress, char dressSize = 'S' ) 
+{
+    ignoreUnused(typeOfDress, dressSize);
+    return {};  
+}
 /*
  4)
  */
-
+int numOfMangaAvailable(char initialLetterOfTitle, int typeOfManga = 2)
+{
+    ignoreUnused(initialLetterOfTitle, typeOfManga);
+    return {};
+}
 /*
  5)
  */
-
+void increaseVolume(float volumeValue, float gainValue = 1.0f)
+{
+    ignoreUnused(volumeValue, gainValue);
+}
 /*
  6)
  */
-
+void addFiltersToChain(int numOfFilters, char filterCutType = 'l', float gainValue = 1.0f)
+{
+    ignoreUnused(numOfFilters, filterCutType, gainValue);
+}
 /*
  7)
  */
-
+void orderBeer(int debitCardNumber, int numberOfBeers = 1)
+{
+    ignoreUnused(debitCardNumber, numberOfBeers);
+}
 /*
  8)
  */
-
+void resumeSong(int momentTimeStamp, int sampleRate = 44100)
+{
+    ignoreUnused(momentTimeStamp, sampleRate);
+}
 /*
  9)
  */
-
+float offerToAuction(float actualOffer, float yourOffer = 50.0f)
+{
+    ignoreUnused(actualOffer, yourOffer);
+    return {};
+}
 /*
  10)
  */
-
+void accelerateCar(double pressureRate, bool turboOn = false)
+{
+    ignoreUnused(pressureRate, turboOn);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -141,27 +198,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto mathOperation = makeMathOperation(2, 3, 0);
     //2)
-    
+    auto isRoomBooked = bookARoom(7, 3);
     //3)
-    
+    auto isSizeAvailable = isDressSizeAvailable(3, 'M');
     //4)
-    
+    auto numberOfManga = numOfMangaAvailable('M', 1);
     //5)
-    
+    increaseVolume(54.5f, 3.0f);
     //6)
-    
+    addFiltersToChain(2, 'h', 1.0f);
     //7)
-    
+    orderBeer(1234567, 4);
     //8)
-    
+    resumeSong(851, 44100);
     //9)
-    
+    auto actualAuctionOffer = offerToAuction(250.43f, 300.0f);
     //10)
+    accelerateCar(32.5, true);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, mathOperation, isRoomBooked, isSizeAvailable, numberOfManga, actualAuctionOffer);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
